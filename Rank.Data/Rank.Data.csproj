@@ -54,8 +54,10 @@
     <Compile Include="Models\MagicType.cs" />
     <Compile Include="Models\RankedBeing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ASPMVCFiveStudyDbContext.cs" />
     <Compile Include="Services\IRankedBeingData.cs" />
     <Compile Include="Services\RankedBeingInMemory.cs" />
+    <Compile Include="Services\SqlRankedBeingData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
