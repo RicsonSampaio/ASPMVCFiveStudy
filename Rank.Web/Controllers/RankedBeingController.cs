@@ -53,5 +53,19 @@ namespace Rank.Web.Controllers
             _db.Update(rankedBeing);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var rankedBeing = _db.GetSingleRankedBeing(id);
+            return View(rankedBeing);
+        }
+
+        [HttpPost, ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, FormCollection form)
+        {
+            _db.Delete(id);
+            return RedirectToAction("Index");
+        }
     }
 }

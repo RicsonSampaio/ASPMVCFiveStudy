@@ -23,6 +23,13 @@ namespace Rank.Data.Services
             context.SaveChanges();
         }
 
+        public void Delete(int id)
+        {
+            var rankedBeing = context.RankedBeings.Find(id);
+            context.RankedBeings.Remove(rankedBeing);
+            context.SaveChanges();
+        }
+
         public IEnumerable<RankedBeing> GetAll()
         {
             return context.RankedBeings.OrderBy(rb => rb.Name);

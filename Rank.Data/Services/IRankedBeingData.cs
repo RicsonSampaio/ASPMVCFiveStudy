@@ -13,5 +13,6 @@ namespace Rank.Data.Services
         RankedBeing GetSingleRankedBeing(int id);
         void Add(RankedBeing rankedBeing);
         void Update(RankedBeing rankedBeing);
+        void Delete(int id);
     }
 }
