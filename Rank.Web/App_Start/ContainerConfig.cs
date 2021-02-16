@@ -15,9 +15,10 @@ namespace Rank.Web
         {
             var builder = new ContainerBuilder();
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
-            builder.RegisterType<RankedBeingInMemory>()
+            builder.RegisterType<SqlRankedBeingData>()
                 .As<IRankedBeingData>()
-                .SingleInstance();
+                .InstancePerRequest();
+            builder.RegisterType<ASPMVCFiveStudyDbContext>().InstancePerRequest();
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
