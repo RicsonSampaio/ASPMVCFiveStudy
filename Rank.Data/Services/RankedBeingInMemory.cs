@@ -26,6 +26,11 @@ namespace Rank.Data.Services
             rankedBeings.Add(rankedBeing);
         }
 
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<RankedBeing> GetAll()
         {
             return rankedBeings.OrderBy(n => n.Name);
